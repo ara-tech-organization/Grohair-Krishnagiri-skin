@@ -119,6 +119,13 @@
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   padding: 24px 28px;
+  margin-top: 30px;
+}
+
+@media (max-width: 980px) {
+  .hero__form-card {
+    margin-top: 0;
+  }
 }
 
 @property --border-angle {
