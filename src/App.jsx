@@ -12,12 +12,22 @@ import Footer from './components/Footer'
 import FormPopup from './components/FormPopup'
 import OfferPopup from './components/OfferPopup'
 import CallingPopup from './components/CallingPopup'
+import ThankYouPage from './components/ThankYouPage'
 import { NAV_LINKS } from './data/site'
 
 const FORM_POPUP_DELAY_MS = 3000
 const OFFER_POPUP_DELAY_MS = 600
+const isThankYouPage = window.location.pathname.replace(/\/+$/, '').endsWith('/thank-you')
 
 function App() {
+  if (isThankYouPage) {
+    return <ThankYouPage />
+  }
+
+  return <Landing />
+}
+
+function Landing() {
   const [formPopupOpen, setFormPopupOpen] = useState(false)
   const [offerPopupOpen, setOfferPopupOpen] = useState(false)
   const [callingPopupOpen, setCallingPopupOpen] = useState(false)

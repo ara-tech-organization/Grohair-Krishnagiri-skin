@@ -1,0 +1,95 @@
+.thankyou {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #fff8f8 0%, #ffffff 60%);
+}
+
+.thankyou__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.thankyou__glow--one {
+  width: 420px;
+  height: 420px;
+  background: rgba(216, 19, 36, 0.14);
+  top: -160px;
+  right: -120px;
+  animation: floatY 9s ease-in-out infinite;
+}
+
+.thankyou__glow--two {
+  width: 320px;
+  height: 320px;
+  background: rgba(201, 161, 59, 0.14);
+  bottom: -140px;
+  left: -100px;
+  animation: floatY 11s ease-in-out infinite reverse;
+}
+
+.thankyou__card {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.thankyou__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--red-light);
+  color: var(--red);
+  margin-bottom: 22px;
+}
+
+.thankyou__card h1 {
+  font-size: clamp(26px, 3.4vw, 34px);
+  margin-bottom: 14px;
+}
+
+.thankyou__card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin-bottom: 32px;
+}
+
+.thankyou__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .thankyou__card {
+    padding: 36px 24px;
+  }
+
+  .thankyou__actions {
+    flex-direction: column;
+  }
+
+  .thankyou__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

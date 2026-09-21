@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { PhoneCall, CircleCheck } from 'lucide-react'
+import { PhoneCall } from 'lucide-react'
 import { CLINIC, TIME_SLOTS } from '../data/site'
 import { submitAppointment } from '../lib/submitAppointment'
+import { LEAD_NAME_KEY } from '../lib/leadStorage'
 import CustomSelect from './CustomSelect'
 import './AppointmentForm.css'
 
@@ -12,7 +13,6 @@ function AppointmentForm({ compact = false, idPrefix = 'form', onCallClick }) {
     city: '',
     time: '',
   })
-  const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
@@ -37,19 +37,13 @@ function AppointmentForm({ compact = false, idPrefix = 'form', onCallClick }) {
     } catch (err) {
       console.error('Appointment submission failed:', err)
     } finally {
-      setSubmitting(false)
-      setSubmitted(true)
+      try {
+        sessionStorage.setItem(LEAD_NAME_KEY, values.name.trim())
+      } catch {
+        /* ignore storage errors */
+      }
+      window.location.href = `${import.meta.env.BASE_URL}thank-you`
     }
-  }
-
-  if (submitted) {
-    return (
-      <div className="appt-success">
-        <CircleCheck size={44} strokeWidth={1.5} />
-        <h3>Thank You, {values.name.split(' ')[0]}!</h3>
-        <p>Our Krishnagiri team will call you shortly to confirm your consultation.</p>
-      </div>
-    )
   }
 
   return (
