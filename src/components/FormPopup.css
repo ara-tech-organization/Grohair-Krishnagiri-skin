@@ -1,0 +1,84 @@
+.fpopup__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(26, 20, 20, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fpopup__card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 94vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 30px 28px 26px;
+}
+
+.fpopup__card::-webkit-scrollbar {
+  display: none;
+}
+
+.fpopup__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--off-white);
+  color: var(--text);
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.fpopup__close:hover {
+  background: var(--red-light);
+  color: var(--red);
+  transform: rotate(90deg);
+}
+
+.fpopup__head {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.fpopup__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.fpopup__head h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.fpopup__head p {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+@media (max-width: 480px) {
+  .fpopup__card {
+    padding: 24px 18px 20px;
+  }
+}

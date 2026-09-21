@@ -1,0 +1,114 @@
+.treatments__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.treatment__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 26px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.treatment__card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(216, 19, 36, 0.06), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.treatment__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.treatment__card:hover::after {
+  opacity: 1;
+}
+
+.treatment__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--red-light);
+  color: var(--red);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+.treatment__card:hover .treatment__icon {
+  background: var(--red);
+  color: var(--white);
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.treatment__card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.treatment__card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.treatment__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--red);
+  position: relative;
+  z-index: 1;
+  transition: gap 0.25s ease;
+}
+
+.treatment__card:hover .treatment__link {
+  gap: 8px;
+}
+
+.treatments__cta {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.treatments__cta p {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .treatments__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .treatments__grid {
+    grid-template-columns: 1fr;
+  }
+}

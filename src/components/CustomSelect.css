@@ -1,0 +1,90 @@
+.cselect {
+  position: relative;
+}
+
+.cselect__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: var(--font);
+  font-size: 15px;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cselect__trigger:hover {
+  border-color: rgba(216, 19, 36, 0.4);
+}
+
+.cselect__trigger--open {
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px var(--red-light);
+}
+
+.cselect__placeholder {
+  color: var(--text-soft);
+}
+
+.cselect__chevron {
+  flex-shrink: 0;
+  color: var(--red);
+  transition: transform 0.25s ease;
+}
+
+.cselect__trigger--open .cselect__chevron {
+  transform: rotate(180deg);
+}
+
+.cselect__menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  list-style: none;
+  margin: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  transform-origin: top;
+}
+
+.cselect__option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 12px;
+  font-size: 14.5px;
+  color: var(--text);
+  border-radius: 8px;
+  text-align: left;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.cselect__option:hover {
+  background: var(--red-light);
+  color: var(--red-dark);
+}
+
+.cselect__option--selected {
+  background: var(--red-light);
+  color: var(--red);
+  font-weight: 600;
+}
+
+.cselect__option--selected svg {
+  color: var(--red);
+}

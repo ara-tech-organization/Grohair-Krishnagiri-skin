@@ -1,0 +1,109 @@
+.appt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.appt-form--compact {
+  gap: 11px;
+}
+
+.appt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.appt-form--compact .appt-field {
+  gap: 4px;
+}
+
+.appt-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.appt-form--compact .appt-field label {
+  font-size: 12.5px;
+}
+
+.appt-field input,
+.appt-field select {
+  font-family: var(--font);
+  font-size: 15px;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.appt-form--compact .appt-field input,
+.appt-form--compact .cselect__trigger {
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.appt-field input:focus,
+.appt-field select:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px var(--red-light);
+}
+
+.appt-field input::placeholder {
+  color: var(--text-soft);
+}
+
+.appt-error {
+  margin: -4px 0 0;
+  font-size: 13px;
+  color: var(--red-dark);
+  background: var(--red-light);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.appt-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-top: 4px;
+}
+
+.appt-divider::before,
+.appt-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.appt-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 32px 12px;
+  color: var(--red);
+  animation: fadeUp 0.5s ease;
+}
+
+.appt-success h3 {
+  font-size: 20px;
+}
+
+.appt-success p {
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
